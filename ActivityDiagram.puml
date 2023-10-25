@@ -1,0 +1,71 @@
+@startuml
+
+
+start
+title Account Ledger Capstone Activity Diagram
+:Ask for **User ID**;
+:Prompt User to Choose  Home Screen Option;
+
+label userInput
+switch (User Input)
+case (  (A) Add Deposit )
+:Add Deposit;
+:Add to the CSV file;
+case (  (P) Make Payment)
+:Prompt User for
+the Debit Information;
+:Add to the CSV file;
+
+
+case (  (L) Ledger)
+:Display the Ledger Screen;
+
+switch (User Input)
+case (  (A) All Input)
+:Display All Entries;
+case (  (D) Deposits)
+:Display Only Deposits;
+case (  (P) Payments)
+:Display Only Payments;
+case (  (R) Reports)
+:New Screen that
+allows User to run pre-defined
+reports or to run a custom search;
+label reportPage
+switch (Search)
+case (  (1) Month to Date)
+:Display all reports
+within the calendar month;
+case (  (2) Previous Month)
+:Display all reports
+within the calendar month;
+case (  (3) Year To Date)
+:Display all reports
+within the calendar year;
+case (    (4) Previous Year)
+:Display the reports
+within the year;
+case (  (5) Search by Vendor)
+:Prompt the user
+for the vendor name;
+case (  (6) Custom Search)
+:Prompt the user for
+the following search values;
+case ( (0) Back)
+:Go back to
+the report page;
+goto reportPage
+endswitch
+case (  (H) Home)
+:Go Back to the Home Page;
+goto userInput
+endswitch
+case (  (X) Exit)
+:Exit the Application;
+kill
+endswitch
+
+stop
+
+@enduml
+

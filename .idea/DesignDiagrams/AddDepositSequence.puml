@@ -1,0 +1,11 @@
+@startuml
+
+
+autonumber
+
+User -> Terminal: Request to Add Deposit
+Terminal --> User: Prompt User with Amount
+
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: another authentication Response
+@enduml

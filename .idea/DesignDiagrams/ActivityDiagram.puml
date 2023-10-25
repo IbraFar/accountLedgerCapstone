@@ -4,6 +4,7 @@
 start
 title Account Ledger Capstone Activity Diagram
 :Ask for **User ID**;
+
 :Prompt User to Choose  Home Screen Option;
 
 label userInput

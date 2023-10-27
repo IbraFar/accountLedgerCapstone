@@ -7,7 +7,7 @@
 
 ## Sequence Diagram
 
-![](C:\pluralsight\AccountLedgerCapstone\DesignDiagrams\ActivityDiagram-Account_Ledger_Capstone_Activity_Diagram.png)
+![](DesignDiagrams\ActivityDiagram-Account_Ledger_Capstone_Activity_Diagram.png)
 >This sequence diagram allows you to see the flow a User would go through as they ran the program. 
 
 
@@ -20,4 +20,4 @@
 
 # Code Examples:
 
-![](C:\pluralsight\AccountLedgerCapstone\DesignDiagrams\CodeExampleAccountingLedger Capstone.png)
+![](DesignDiagrams\CodeExampleAccountingLedger Capstone.png)

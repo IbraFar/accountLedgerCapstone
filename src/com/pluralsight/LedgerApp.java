@@ -1,79 +1,64 @@
 package com.pluralsight;
 
-import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class LedgerApp {
-    private static final ArrayList<Transaction> transactions = new ArrayList<Transaction>();
-    private static final String FILE_NAME = "transactions.csv";
-    private static final String DATE_FORMAT = "yyyy-MM-dd";
-    private static final String TIME_FORMAT = "HH:mm:ss";
-    private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern(DATE_FORMAT);
-    private static final DateTimeFormatter TIME_FORMATTER = DateTimeFormatter.ofPattern(TIME_FORMAT);
+    static ArrayList<Transaction> transactions = new ArrayList<>();
 
     public static void main(String[] args) {
         //Manage the stack frames
+
+        FileManager fileManager = new FileManager();
+        fileManager.loadTransactions();
+
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
 
         while (running) {
 
-            printHomeScreenOptions();
+            homeScreen(scanner);
 
 
-            homeScreenSwitchCase(scanner);
-
-
-
-            running = false;
         }
+        scanner.close();
+        running = false;
     }
 
 
-    public static void printHomeScreenOptions(){
-        System.out.println("Welcome to TransactionApp");
-        System.out.println("Choose an option:");
-        System.out.println("D) Add Deposit");
-        System.out.println("P) Make Payment (Debit)");
-        System.out.println("L) Ledger");
-        System.out.println("X) Exit");
-    }
 
-    public static String getStringInput(Scanner scanner, String prompt){
-        System.out.println(prompt);
-        return scanner.nextLine().trim();
-    }
+    public static void homeScreen(Scanner scanner){
+        System.out.println("""
+               
+               ==================================
+                      Home Screen Menu
+               ==================================
+               Choose an option:
+               
+               (D) Make Deposit
+               (P) Make Payment (Debit)
+               (L) Ledger
+               (X) Exit
+               
+               """);
 
-    public static Character getCharInput(Scanner scanner, String prompt){
-        System.out.println(prompt);
-        return scanner.nextLine().charAt(0);
-    }
-
-    public static BigDecimal getBigDecimalInput(Scanner scanner,String prompt){
-        System.out.println(prompt);
-        return scanner.nextBigDecimal();
-    }
-
-    public static void homeScreenSwitchCase(Scanner scanner){
-
-        Character input = getCharInput(scanner, "Please enter the initial of your choice: \n");
+        Character input = IO.getCharInput(scanner, "Please enter the initial of your choice: \n");
 
         switch (Character.toUpperCase(input)) {
             case 'D':
                 addDeposit(scanner);
                 break;
             case 'P':
-                //addPayment(scanner);
+                addPayment(scanner);
                 break;
             case 'L':
-                //ledgerMenu(scanner);
+                ledgerMenu(scanner);
                 break;
             case 'X':
-                //running = false;
-                break;
+                System.out.println("Have a great day!");
+                return;
             default:
                 System.out.println("Invalid option");
                 break;
@@ -81,8 +66,166 @@ public class LedgerApp {
     }
 
     public static void addDeposit(Scanner scanner){
+        System.out.println("""
+               
+               ==================================
+                       Making a Deposit....
+               ==================================
+               """);
 
-        getStringInput(scanner, "Sample deposit method code");
+        LocalDate date = IO.getDateInput(scanner, "Please enter the date of the deposit(YYYY-MM-DD): ");
+        LocalTime time = IO.getTimeInput(scanner, "Please enter the time of the deposit(HH:mm:ss): ");
+        String description = IO.getStringInput(scanner, "Please enter the description: ");
+        String vendor = IO.getStringInput(scanner, "Please enter the vendor: ");
+        double amount = IO.getDoubleInput(scanner, "Please enter the amount: ");
+
+        Transaction newTransaction = new Transaction(date, time, description, vendor, amount, true);
+
+        transactions.add(newTransaction);
+
+        FileManager.postSingleTransaction(newTransaction);
+
     }
+
+    public static void addPayment(Scanner scanner){
+        System.out.println("""
+               
+               ==================================
+                       Making a Payment....
+               ==================================
+               """);
+
+        LocalDate date = IO.getDateInput(scanner, "Please enter the date of the deposit(YYYY-MM-DD): ");
+        LocalTime time = IO.getTimeInput(scanner, "Please enter the time of the deposit(HH:mm:ss): ");
+        String description = IO.getStringInput(scanner, "Please enter the description: ");
+        String vendor = IO.getStringInput(scanner, "Please enter the vendor: ");
+        double amount = IO.getDoubleInput(scanner, "Please enter the amount: ");
+
+        Transaction newTransaction = new Transaction(date, time, description, vendor, amount, false);
+
+        transactions.add(newTransaction);
+
+        FileManager.postSingleTransaction(newTransaction);
+
+    }
+
+
+    public static void ledgerMenu(Scanner scanner){
+        System.out.println("""
+               
+               ==================================
+                          Ledger Menu
+               ==================================
+               Choose an option:
+               
+               (A) All
+               (D) Deposits
+               (P) Payments
+               (R) Reports
+               (H) Home
+               """);
+
+        Character input = IO.getCharInput(scanner, "Please enter the initial of your choice: \n");
+
+        switch (Character.toUpperCase(input)) {
+            case 'A':
+                allTransactions();
+                break;
+            case 'D':
+                allDeposits();
+                break;
+            case 'P':
+                allPayments();
+                break;
+            case 'R':
+                reportMenu(scanner);
+            default:
+                return;
+        }
+    }
+
+    public static void allTransactions(){
+        System.out.println("""
+               
+               ==================================
+                    Loading All Transactions
+               ==================================
+               """);
+        for(Transaction transaction: transactions){
+            System.out.println(transaction.toString());
+        };
+        System.out.println("\nSending you back to the main menu....");
+    }
+
+    public static void allDeposits(){
+        System.out.println("""
+               
+               ==================================
+                    Loading All Deposits
+               ==================================
+               """);
+        for(Transaction transaction: transactions){
+            if(transaction.getDeposit()) {
+                System.out.println(transaction.toString());
+            }
+        };
+        System.out.println("\nSending you back to the main menu....");
+    }
+
+    public static void allPayments(){
+        System.out.println("""
+               
+               ==================================
+                    Loading All Deposits
+               ==================================
+               """);
+        for(Transaction transaction: transactions){
+            if(!transaction.getDeposit()) {
+                System.out.println(transaction.toString());
+            }
+        };
+        System.out.println("\nSending you back to the main menu....");
+    }
+
+    public static void reportMenu(Scanner scanner){
+        System.out.println("""
+               
+               ==================================
+                          Report Menu
+               ==================================
+               Choose an option:
+               
+               (1) Month To Date
+               (2) Previous Month
+               (3) Year To Date
+               (4) Previous Year
+               (5) Search By Vendor
+               (0) Back
+               """);
+
+        Character input = IO.getCharInput(scanner, "Please enter the number of your choice: \n");
+
+        switch (Character.toUpperCase(input)) {
+            case '1':
+                SearchFilter.monthToDate(transactions);
+                break;
+            case '2':
+                SearchFilter.previousMonth(transactions);
+                break;
+            case '3':
+                SearchFilter.yearToDate(transactions);
+                break;
+            case '4':
+                //
+                break;
+            case '5':
+                SearchFilter.filterTransactionsByVendor(scanner, transactions);
+                break;
+            default:
+                System.out.println("Not an option! Sending you back...");
+                return;
+        }
+    }
+
 }
 

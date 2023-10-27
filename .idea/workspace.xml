@@ -8,13 +8,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8ec8878-a212-4e8f-92dd-0c462cf19a16" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Transactions/transactions.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/DesignDiagrams/ActivityDiagram.puml" beforeDir="false" afterPath="$PROJECT_DIR$/DesignDiagrams/ActivityDiagram.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/DesignDiagrams/AddDepositSequence.puml" beforeDir="false" afterPath="$PROJECT_DIR$/DesignDiagrams/AddDepositSequence.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/DesignDiagrams/ObjectDiagram.puml" beforeDir="false" afterPath="$PROJECT_DIR$/DesignDiagrams/ObjectDiagram.puml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/pluralsight/IO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Transactions/transactions.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/pluralsight/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pluralsight/FileManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/pluralsight/LedgerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pluralsight/LedgerApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pluralsight/SearchFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pluralsight/SearchFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pluralsight/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pluralsight/Transaction.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +26,8 @@
       <list>
         <option value="UML Activity" />
         <option value="UML Object" />
-        <option value="Class" />
         <option value="UML Sequence" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -56,6 +56,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\pluralsight\AccountLedgerCapstone\src\com\pluralsight" />
       <recent name="C:\pluralsight\AccountLedgerCapstone" />
       <recent name="C:\pluralsight\AccountLedgerCapstone\.idea\DesignDiagrams" />
       <recent name="C:\pluralsight\AccountLedgerCapstone\.idea" />

@@ -9,52 +9,74 @@ public class Transaction {
     private LocalTime time;
     private String description;
     private String vendor;
-    private BigDecimal amount;
-    public Transaction(LocalDate date, LocalTime time, String description, String vendor, BigDecimal amount) {
+    private double amount;
+
+    private boolean isDeposit;
+
+
+    private String isDepositOrPayment;
+
+    /*public Transaction(LocalDate date, LocalTime time, String description, String vendor, double amount) {
         this.date = date;
         this.time = time;
         this.description = description;
         this.vendor = vendor;
         this.amount = amount;
-    }
-    public LocalDate getDate() {
-        return date;
+        this.isDeposit = true;
     }
 
-    public void setDate(LocalDate date) {
+     */
+
+    public Transaction(LocalDate date, LocalTime time, String description, String vendor, double amount, boolean isDeposit) {
         this.date = date;
+        this.time = time;
+        this.description = description;
+        this.vendor = vendor;
+        this.amount = amount;
+        this.isDeposit = isDeposit;
+        this.isDepositOrPayment = (isDeposit)? "DEPOSIT" : "PAYMENT";
+    }
+
+    public LocalDate getDate() {
+        return date;
     }
 
     public LocalTime getTime() {
         return time;
     }
 
-    public void setTime(LocalTime time) {
-        this.time = time;
-    }
-
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
 
     public String getVendor() {
         return vendor;
     }
 
-    public void setVendor(String vendor) {
-        this.vendor = vendor;
+    public boolean getDeposit() {
+        return isDeposit;
+    }
+    public String getIsDepositOrPayment() {
+        return isDepositOrPayment;
     }
 
-    public BigDecimal getAmount() {
+
+    public double getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
-        this.amount = amount;
-    }
 
+
+    @Override
+    public String toString() {
+        return
+        String.format("\n%s|%s|%s|%s|%.2f|%s",
+                getDate(),
+                getTime(),
+                getDescription(),
+                getVendor(),
+                getAmount(),
+                getIsDepositOrPayment());
+    }
 }

@@ -7,13 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8ec8878-a212-4e8f-92dd-0c462cf19a16" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/pluralsight/IO.java" afterDir="false" />
+    <list default="true" id="b8ec8878-a212-4e8f-92dd-0c462cf19a16" name="Changes" comment="&quot;Added to a bunch of classes and main functionality&quot;">
+      <change afterPath="$PROJECT_DIR$/DesignDiagrams/ActivityDiagram-Account_Ledger_Capstone_Activity_Diagram.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transactions/transactions.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pluralsight/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pluralsight/FileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pluralsight/LedgerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pluralsight/LedgerApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pluralsight/SearchFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pluralsight/SearchFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/pluralsight/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pluralsight/Transaction.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,16 +45,21 @@
     "DefaultPlantUmlFileTemplate": "UML Sequence",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/Ibrahim/Downloads",
+    "last_opened_file_path": "C:/pluralsight/AccountLedgerCapstone/DesignDiagrams/ActivityDiagram-Account_Ledger_Capstone_Activity_Diagram.png",
     "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "preferences.lookFeel"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "Markdown"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\pluralsight\AccountLedgerCapstone\src\com\pluralsight" />
+      <recent name="C:\pluralsight\AccountLedgerCapstone\DesignDiagrams" />
       <recent name="C:\pluralsight\AccountLedgerCapstone" />
+      <recent name="C:\pluralsight\AccountLedgerCapstone\src\com\pluralsight" />
       <recent name="C:\pluralsight\AccountLedgerCapstone\.idea\DesignDiagrams" />
       <recent name="C:\pluralsight\AccountLedgerCapstone\.idea" />
     </key>
@@ -71,6 +73,18 @@
       <option name="presentableId" value="Default" />
       <updated>1698180903620</updated>
     </task>
+    <task id="LOCAL-00001" summary="&quot;Added to a bunch of classes and main functionality&quot;">
+      <created>1698428631983</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1698428631983</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="&quot;Added to a bunch of classes and main functionality&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Added to a bunch of classes and main functionality&quot;" />
   </component>
 </project>

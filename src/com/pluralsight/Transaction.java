@@ -16,16 +16,6 @@ public class Transaction {
 
     private String isDepositOrPayment;
 
-    /*public Transaction(LocalDate date, LocalTime time, String description, String vendor, double amount) {
-        this.date = date;
-        this.time = time;
-        this.description = description;
-        this.vendor = vendor;
-        this.amount = amount;
-        this.isDeposit = true;
-    }
-
-     */
 
     public Transaction(LocalDate date, LocalTime time, String description, String vendor, double amount, boolean isDeposit) {
         this.date = date;
